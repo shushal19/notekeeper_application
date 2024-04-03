@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:notekeeper_application/screens/note_list.dart';
 
+// ignore: must_be_immutable
 class NoteDetail extends StatefulWidget {
-
-   NoteDetail(String title, {super.key});
+  final String? title;
+  const NoteDetail({super.key, this.title});
 
   @override
   State<NoteDetail> createState() => __NoteDetailState();
 }
 
 class __NoteDetailState extends State<NoteDetail> {
-  
   static final _priorities = ['High', 'low'];
   @override
   Widget build(BuildContext context) {
     TextStyle? textStyle = Theme.of(context).textTheme.titleLarge;
     TextEditingController titleController = TextEditingController();
     TextEditingController discriptionController = TextEditingController();
-    String title;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text(title),
+        title: Text(widget.title!),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 15.0, left: 10.0, right: 10.0),
@@ -95,7 +94,6 @@ class __NoteDetailState extends State<NoteDetail> {
                         onPressed: () {
                           setState(() {
                             Navigator.pop(context);
-
                           });
 
                           // ignore: deprecated_member_use

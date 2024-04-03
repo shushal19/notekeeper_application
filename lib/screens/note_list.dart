@@ -19,7 +19,7 @@ class _NoteListState extends State<NoteList> {
       body: getNoteListView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-         navigateToDetail('Add Note');
+          navigateToDetail('Add Note');
         },
         child: const Icon(Icons.add),
       ),
@@ -58,7 +58,7 @@ class _NoteListState extends State<NoteList> {
   }
 
   void navigateToDetail(String title) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) =>  NoteDetail(title)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => NoteDetail(title: title)));
   }
 }
